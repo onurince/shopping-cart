@@ -1,5 +1,5 @@
-import Product from '../src/Product';
-import Category from '../src/Category';
+import Product from '../src/Cart/Product';
+import Category from '../src/Cart/Category';
 
 describe('Product', () => {
   let defaultCategory: Category;
