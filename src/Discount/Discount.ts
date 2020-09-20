@@ -1,4 +1,4 @@
-import ShoppingCart from "../Cart/ShoppingCart";
+import ShoppingCart from '../Cart/ShoppingCart';
 import DiscountStrategy from './Strategy/DiscountStrategy';
 
 abstract class Discount {

@@ -4,7 +4,6 @@ import Category from '../Cart/Category';
 import DiscountTypes from './DiscountTypes';
 import DiscountStrategy from './Strategy/DiscountStrategy';
 
-
 class Campaign extends Discount {
 
   private category: Category;

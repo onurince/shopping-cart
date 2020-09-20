@@ -1,8 +1,8 @@
-import Product from "./Product";
+import Product from './Product';
 import Discount from '../Discount/Discount';
 import Category from './Category';
-import Coupon from "../Discount/Coupon";
-import Campaign from "../Discount/Campaign";
+import Coupon from '../Discount/Coupon';
+import Campaign from '../Discount/Campaign';
 import DeliveryCostCalculator from '../Delivery/DeliveryCostCalculator';
 
 class ShoppingCart {
@@ -17,8 +17,8 @@ class ShoppingCart {
 
   public addItem(product: Product, quantity: number): void {
     const currentQty: number = this.cartItems.get(product) ?? 0;
-    quantity += currentQty;
-    this.cartItems.set(product, quantity);
+    const newQuantity: number = quantity + currentQty;
+    this.cartItems.set(product, newQuantity);
   }
 
   public applyDiscounts(...discounts: Discount[]): void {
@@ -101,7 +101,7 @@ class ShoppingCart {
     return Array.from(this.discounts)
       .filter(([product]) => product instanceof Campaign)
       .map(([, amount]) => amount)
-      .reduce((previous, current) => previous + current, 0); 
+      .reduce((previous, current) => previous + current, 0);
   }
 
   public summary(): void {
