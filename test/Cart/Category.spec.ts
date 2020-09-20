@@ -1,4 +1,4 @@
-import Category from '../src/Cart/Category';
+import Category from '../../src/Cart/Category';
 
 describe('Category Test Suite', () => {
 
