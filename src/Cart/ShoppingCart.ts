@@ -73,7 +73,8 @@ class ShoppingCart {
   }
 
   public getCategoryCount(): number {
-    return Array.from(this.cartItems.keys()).map(product => product.getCategory()).length;
+    const categories = Array.from(this.cartItems.keys()).map(product => product.getCategory());
+    return Array.from(new Set(categories)).length;
   }
 
   public getPriceForCategory(category: Category): number {
