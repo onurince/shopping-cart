@@ -194,8 +194,8 @@ describe('ShoppingCart Test Suite', () => {
   test('Shoppin car summary called console.log', () => {
     const consoleSpy = jest.spyOn(console, 'log').mockImplementation()
     shoppingCart.summary();
-    expect(console.log).toHaveBeenNthCalledWith(1, 'Cart Summary .....');
-    expect(console.log).toBeCalledTimes(10);
+    expect(console.log).toHaveBeenNthCalledWith(1, 'Cart Summary ................');
+    expect(console.log).toBeCalledTimes(14);
     expect(console.log).toHaveBeenLastCalledWith('Category count', 2);
   });
 });

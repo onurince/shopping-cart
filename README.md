@@ -43,10 +43,10 @@ const coupon = new Coupon(couponDiscountAmount, couponMinimumRequired, new Perce
 
 const campaignDiscountAmount = 10;
 const campaignMinimumRequired = 10;
-const campaign = new Campaign(campaignDiscountAmount, campaignMinimumRequired, new FlatRateDiscountStrategy());
+const campaign = new Campaign(campaignDiscountAmount, campaignMinimumRequired, food, new FlatRateDiscountStrategy());
 
 cart.applyDiscounts(coupon, campaign);
-cart.applyDeliveryCosts();
+cart.applyDeliveryCost();
 
 cart.summary();
 ```

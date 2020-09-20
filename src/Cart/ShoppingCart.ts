@@ -105,16 +105,20 @@ class ShoppingCart {
   }
 
   public summary(): void {
-    console.log('Cart Summary .....');
-
+    console.log('Cart Summary ................');
+    console.log('Title\tPrice\tQty\tTotal');
     this.cartItems.forEach((quantity, product) => {
-      console.log(product.getTitle() + ' ' + product.getPrice() + ' ' + quantity);
+      const price = product.getPrice() * quantity;
+      console.log(`${product.getTitle()}\t${product.getPrice()}\t${quantity}\t${price}`);
     });
 
     console.log('Total Product Price', this.getTotalProductPrice());
+    console.log('Coupon Discount', this.getCouponDiscountAmount());
+    console.log('Campaign Discount', this.getCampaignDiscountAmount());
     console.log('Total Discount Price', this.totalDiscountAmount);
     console.log('Total Shipping Cost', this.totalShippingPrice);
-    console.log('Cart Price', this.getTotalPrice());
+    console.log('Cart Prive w/o shipping Cost', this.getTotalPrice());
+    console.log('Cart Price', this.getCartPrice());
     console.log('Deliveries count', this.getDeliveriesCount());
     console.log('Product count', this.getProductCount());
     console.log('Category count', this.getCategoryCount());
